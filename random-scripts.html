@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+    <!-- <button>Press me</button> -->
+
+    <!-- weather example-->
+    <label for="weather">Select the weather type today: </label>
+    <select id="weather">
+      <option value="">--Make a choice--</option>
+      <option value="sunny">Sunny</option>
+      <option value="rainy">Rainy</option>
+      <option value="snowing">Snowing</option>
+      <option value="overcast">Overcast</option>
+    </select>
+    
+    <p></p>
+
+
+
+    <script>
+        // // Your JavaScript goes here!
+        // let a = 10
+        // console.log(a)
+        // console.log(9 * a)
+        // let b = 7 * a
+        // console.log(b)
+    
+        // console.log("Salutare, Lume!")
+        // console.log(23 + 97)
+        // console.log(18 + 22 - 48 + 50 * 2 / 4)
+        // console.log((4+6+9) / 77)
+    
+        // const max = 57
+        // let actual = max - 13
+        // let percentage = actual / max
+        // console.log(percentage)
+    
+        // let myName = 'Andrei'
+        // console.log(`Hello ${myName}!`)
+    
+        
+    
+        // const button = document.querySelector('button');
+    
+        // button.onclick = function() {
+        // let name = prompt('What is your name?');
+        // alert('Hello ' + name + ', nice to see you!');
+        // }
+    
+        // if (age >= 14 && age <= 90)
+        // if !(age >= 14 && age <= 90)
+    
+        // if (age < 14 || age > 90)
+    
+    
+    
+    
+    // Login prompt exercise
+        let userName = prompt('enter name');
+        if (userName == 'Admin') {
+            let password = prompt('enter password')
+            if (password == "TheMaster") {
+                alert('Welcome!')
+            }
+            else if (password == '' || password == null) {
+                alert('Canceled')
+            }
+            else {
+                alert('Wrong password')
+            }
+            }
+        else if (userName == '' || userName ==  null) {
+            alert('Canceled')
+        }
+        else {
+            alert("I don't know you")
+        }
+    
+    
+    
+    //weather example
+    
+    const select = document.querySelector('select');
+    const para = document.querySelector('p');
+    
+    select.addEventListener('change', setWeather);
+    
+    function setWeather() {
+      const choice = select.value;
+    
+      if (choice === 'sunny') {
+        para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+      } else if (choice === 'rainy') {
+        para.textContent = 'Rain is falling outside; take a rain coat and an umbrella, and don\'t stay out for too long.';
+      } else if (choice === 'snowing') {
+        para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+      } else if (choice === 'overcast') {
+        para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+      } else {
+        para.textContent = '';
+      }
+    }
+      </script>
+
+</body>
+</html>

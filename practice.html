@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Functions Practice</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+
+    <script>
+    function add7(num) {
+        return num + 7;
+    }
+
+    function multiply(x, y) {
+        return x * y;
+    }
+
+    function capitalize(string) {
+        firstL = string.charAt(0)
+        firstLC = firstL.toUpperCase()
+        result = firstLC + string.slice(1)
+        return result
+    }
+
+    function lastLetter(string) {
+        return string.charAt(string.length-1)
+    }
+
+    
+    console.log(add7(8))
+    console.log(multiply(10, 20))
+    console.log(capitalize('CE MAI ZICI'))
+    console.log(capitalize('nu mai scrie urat'))
+    console.log(capitalize('testam SI cu Toate CELE'))
+    console.log(lastLetter('mamamiaz'))
+    </script>
+
+</body>
+</html>
