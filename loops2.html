@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Loops: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <p>Exercise from <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Loops">MDN</a></p>
+    <p>In this next task, we want you to write a simple program that, given a name, searches an array of objects containing names and emails (phonebook) and, if it finds the name, outputs the name and phone number into the paragraph (para) and then exits the loop before it has run its course.</p>
+    <p>You are given three variables to begin with:</p>
+    <ul>
+        <li><em>i</em> — starts off with a value of 0; intended to be used as an iterator.</li>
+        <li><em>name</em> — contains a name to search for</li>
+        <li><em>para</em> — contains a reference to a paragraph, which will be used to report the results.</li>
+    </ul>
+    <p>You should use a type of loop that you've not used in the previous task.</p>
+    
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    let name = 'Mustafa';
+    let i = 0;
+    let para = document.createElement('p');
+
+    let phonebook = [
+      { name : 'Chris', number : '1549' },
+      { name : 'Li Kang', number : '9634' },
+      { name : 'Anne', number : '9065' },
+      { name : 'Francesca', number : '3001' },
+      { name : 'Mustafa', number : '6888' },
+      { name : 'Tina', number : '4312' },
+      { name : 'Bert', number : '7780' },
+      { name : 'Jada', number : '2282' },
+    ]
+
+    // Add your code here
+
+    while (i < phonebook.length) {
+        if (phonebook[i].name === name) {
+            para.textContent = phonebook[i].name + ': ' + phonebook[i].number;
+            break;
+        } else {
+            i++
+        }
+    }
+
+    // Don't edit the code below here!
+    let section = document.querySelector('section');
+    section.appendChild(para);
+  </script>
+
+</html>

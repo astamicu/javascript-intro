@@ -17,6 +17,8 @@
   </head>
 
   <body>
+    <p>Exercise from <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Loops">MDN</a></p>
+      <p>In our first looping task we want you start by creating a simple loop that goes through all the items in the provided myArray and prints them out on the screen inside list items, which are appended to the provided list.</p>
 
     <section class="preview">
 
@@ -30,8 +32,9 @@
     let list = document.createElement('ul');
     // Add your code here
     for (let i = 0; i < myArray.length; i++) {
-        list.textContent = myArray[i];
-        console.log(list.textContent)
+        li = document.createElement('li')
+        li.textContent = myArray[i];
+        list.appendChild(li)
     }
     // Don't edit the code below here!
 
