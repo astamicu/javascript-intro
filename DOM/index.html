@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>
+    THE TITLE OF YOUR WEBPAGE
+    </h1>
+    <div id="container"></div>
+
+    <!-- events stuff-->
+    <div id='method1'>
+        <p>UNU</p>
+        <button onclick="alert('Hello World')">Click Me</button>
+
+    </div>
+
+    <div id='method2'>
+        <p>DOI</p>
+        <button id="btn">Click Me</button>
+    </div>
+
+    <div id='method3'>
+        <p>TREI</p>
+        <button id="btn2">Click Me Too</button>
+    </div>
+
+    <div>
+        <p>function</p>
+        <button onclick="alertFunction()">CLICK ME BABY</button>
+    </div>
+
+    <div>
+        <p>Listeners</p>
+        <div id="container">
+            <button id="1">Click Me</button>
+            <button id="2">Click Me</button>
+            <button id="3">Click Me</button>
+        </div>
+        
+    </div>
+
+    <script>
+        const container = document.querySelector('#container');
+
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.textContent = 'This is the glorious text-content!';
+
+        const pared = document.createElement('p');
+        pared.textContent = 'Hey I\'m red!';
+        pared.style.cssText = 'color: red';
+
+        const hash3 = document.createElement('h3');
+        hash3.textContent = 'I\'m a blue h3';
+        hash3.style.color = 'blue';
+
+        const divi = document.createElement('div');
+        divi.style.cssText = 'border: 1px solid black; background-color: pink;'
+        
+        const hash1 = document.createElement('h1');
+        hash1.textContent = 'I\'m in a div';
+        para2 = document.createElement('p');
+        para2.textContent = 'ME TOO!'
+        divi.appendChild(hash1);
+        divi.appendChild(para2);
+
+        container.appendChild(content);
+        container.appendChild(pared);
+        container.appendChild(hash3);
+        container.appendChild(divi)
+
+
+        // events stuff
+
+        // old method 2
+        // const btn = document.querySelector('#btn');
+        // btn.onclick = () => alert("Hello World");
+        
+        // new with alertFunction de mai jos
+        btn.onclick = alertFunction;
+
+        // old method3
+        // const btn2 = document.querySelector('#btn2');
+        // btn2.addEventListener('click', () => {
+        //     alert("Hello World");
+        // });
+
+        // new with alertFunction de mai jos
+        btn2.addEventListener('click', alertFunction);
+
+        // new with newfunction
+        btn2.addEventListener('click', function(e){
+            console.log(e.target);
+            e.target.style.background = 'blue';
+        });
+
+
+        function alertFunction() {
+            alert("YAY! YOU DID IT!");
+        }
+
+
+        //listeners
+        // buttons is a node list. It looks and acts much like an array.
+        const buttons = document.querySelectorAll('button');
+
+        // we use the .forEach method to iterate through each button
+        buttons.forEach((button) => {
+
+        // and for each one we add a 'click' listener
+        button.addEventListener('click', (e) => {
+            console.log(button.id);
+        });
+        });
+
+    </script>
+</body>
+</html>
