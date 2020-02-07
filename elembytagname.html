@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Elements by tag name exercise</title>
+    </head>
+    <body>
+        
+
+        <h1>Heading with a <span>span</span> element.</h1>
+        <p>A paragraph with <span>one</span>, <span>two</span>
+            spans.</p>
+        <p>And another <span>span</span> with a <a href='#'>link</a></p>
+
+        <script>
+
+            function byTagName(node, tagName) {
+                // return node.getElementsByTagName(tagName) // this works
+                if (node.nodeType == Node.ELEMENT_NODE) {
+                    tags = []
+                    for (let i = 0; i < node.childNodes.length; i++) {
+                        if (byTagName(node.childNodes[i], tagName)) {
+                            tags.push(tagName)
+                            return tags
+                        }
+                    }
+                    return false;
+                } else if (node.nodeType == Node.TEXT_NODE) {
+                    return node.nodeValue.indexOf(tagName) > -1;
+                }
+            }
+
+            console.log(byTagName(document.body, "h1").length);
+            // → 1
+            console.log(byTagName(document.body, "span").length);
+            // → 3
+            let para = document.querySelector("p");
+            console.log(byTagName(para, "span").length);
+            // → 2
+            console.log(byTagName(document.body, 'a').length);
+        </script>
+    </body>
+</html>
