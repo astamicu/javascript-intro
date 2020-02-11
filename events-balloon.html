@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>The inflating balloon</title>
+    </head>
+    <body>
+        
+        <h2>Exercise from <a href='https://eloquentjavascript.net/15_event.html'>here</a></h2>
+        <p>Press the up or down arrow to inflate/deflate the balloon. Be careful not to pop it.</p>
+        <p id='balloon' style="font-size: 100px; text-align: center;">🎈</p>
+        <script>
+            size = 100;
+
+            function balloon(){
+                para = document.getElementById('balloon');
+                if (event.key == 'ArrowUp') {
+                    size = size + (size * 0.1);
+                    para.style.fontSize = size + 'px';
+                    if (size > 200) {
+                        para.textContent = '💥'
+                        window.removeEventListener("keydown", balloon);
+                    }
+                }
+                else if (event.key == 'ArrowDown') {
+                    size = size - (size * 0.1);
+                    para.style.fontSize = size + 'px'
+                }
+            }
+        
+            window.addEventListener("keydown", balloon);
+        </script>
+    </body>
+</html>
